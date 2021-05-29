@@ -4,20 +4,24 @@ from .auth.jwt_bearer import JWTBearer
 from .routes.student import router as StudentRouter
 from .routes.orders import router as OrderRouter
 from .routes.admin import router as AdminRouter
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
 app = FastAPI()
-origins = [
-    "https://localhost.9000",
-    "http://localhost",
-    "http://localhost:8000",
-]
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=['*'],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# origins = [
+#     "https://localhost.9000",
+#     "http://localhost",
+#     "http://localhost:8000",
+# ]
+
+middleware = [ Middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True, allow_methods=['*'], allow_headers=['*'])]
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=['*'],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+app = FastAPI(middleware=middleware)
 
 html = """
 <!DOCTYPE html>
