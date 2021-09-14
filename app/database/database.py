@@ -1,4 +1,4 @@
-import motor.motor_asyncio
+# import motor.motor_asyncio
 from bson import ObjectId
 from decouple import config
 from binance.client import Client

@@ -3,7 +3,7 @@ from fastapi.encoders import jsonable_encoder
 import json
 from app.database.database import *
 from app.models.coins import *
-import asyncio
+# import asyncio
 from binance import AsyncClient, BinanceSocketManager
 from binance.client import Client
 import pymongo
