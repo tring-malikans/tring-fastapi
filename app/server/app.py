@@ -80,11 +80,11 @@ html = """
 """
 token_listener = JWTBearer()
 
-# @app.get("/", tags=["Root"])
-# async def get():
-#     return HTMLResponse(html)
-# async def read_root():
-#     return {"message": "Welcome to this fantastic app, sighs."}
+@app.get("/", tags=["Root"])
+async def get():
+    return HTMLResponse(html)
+async def read_root():
+    return {"message": "Welcome to this fantastic app, sighs."}
 
 
 
