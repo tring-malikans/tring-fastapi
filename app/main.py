@@ -83,8 +83,8 @@ token_listener = JWTBearer()
 
 @app.get("/", tags=["Root"])
 async def read_root():
+    # assert response.json() == {"message": "Hello World"}
     return {"message": "Hello World"}
-    # return {"message": "Hello World"}
 # async def get():
 #     return HTMLResponse(html)
 
