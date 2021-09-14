@@ -3,11 +3,11 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.security import HTTPBasicCredentials
 from passlib.context import CryptContext
 
-from server.database.database import *
-#from app.server.auth.admin import validate_login
-from server.auth.jwt_handler import signJWT
-from server.database.database import add_admin
-from server.models.admin import *
+from app.database.database import *
+#from app.app.auth.admin import validate_login
+from app.auth.jwt_handler import signJWT
+from app.database.database import add_admin
+from app.models.admin import *
 
 router = APIRouter()
 
