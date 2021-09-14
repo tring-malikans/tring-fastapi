@@ -11,10 +11,11 @@ from fastapi.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 from mangum import Mangum
 import uvicorn
+import os
 # from fastapi_socketio import SocketManager
 app = FastAPI()
 
-
+port = os.environ["PORT"]
 # origins = [
 #     "https://localhost.9000",
 #     "http://localhost",
@@ -104,5 +105,5 @@ handler = Mangum(app=app)
 
 
 
-# if __name__ == '__main__':
-#     uvicorn.run('server.app:app', host="0.0.0.0", port=9000, reload=True)
+if __name__ == '__main__':
+    uvicorn.run('server.app:app', host="0.0.0.0", port=port, reload=True)
