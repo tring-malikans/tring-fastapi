@@ -2,7 +2,7 @@
 from fastapi import FastAPI, WebSocket, Depends
 from fastapi.responses import HTMLResponse
 from .auth.jwt_bearer import JWTBearer
-from .routes.student import router as StudentRouter
+# from .routes.student import router as StudentRouter
 from .routes.users import router as UserRouter
 from .routes.orders import router as OrderRouter
 from .routes.admin import router as AdminRouter
