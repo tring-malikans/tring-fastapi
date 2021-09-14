@@ -15,7 +15,6 @@ import os
 # from fastapi_socketio import SocketManager
 app = FastAPI()
 
-port = os.environ["PORT"]
 # origins = [
 #     "https://localhost.9000",
 #     "http://localhost",
@@ -83,10 +82,11 @@ html = """
 token_listener = JWTBearer()
 
 @app.get("/", tags=["Root"])
-async def get():
-    return HTMLResponse(html)
 async def read_root():
-    return {"message": "Welcome to this fantastic app, sighs."}
+    return {"message": "Hello World"}
+    # return {"message": "Hello World"}
+# async def get():
+#     return HTMLResponse(html)
 
 
 
@@ -106,4 +106,4 @@ handler = Mangum(app=app)
 
 
 if __name__ == '__main__':
-    uvicorn.run('server.app:app', host="0.0.0.0", port=port, reload=True)
+    uvicorn.run('server.app:app', host="0.0.0.0", port=8000, reload=True)
