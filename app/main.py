@@ -1,12 +1,12 @@
 # import socketio
 from fastapi import FastAPI, WebSocket, Depends
 from fastapi.responses import HTMLResponse
-from .auth.jwt_bearer import JWTBearer
+from auth.jwt_bearer import JWTBearer
 # from .routes.student import router as StudentRouter
-from .routes.users import router as UserRouter
-from .routes.orders import router as OrderRouter
-from .routes.admin import router as AdminRouter
-from .routes.coins import router as CoinRouter
+from routes.users import router as UserRouter
+from routes.orders import router as OrderRouter
+from routes.admin import router as AdminRouter
+from routes.coins import router as CoinRouter
 from fastapi.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 from mangum import Mangum
@@ -108,4 +108,4 @@ handler = Mangum(app=app)
 
 
 if __name__ == '__main__':
-    uvicorn.run('server.app:app', host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run('main:app', host="0.0.0.0", port=8000, reload=True)

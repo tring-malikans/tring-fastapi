@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
 import json
-from app.database.database import *
-from app.models.student import *
-from app.models.orders import *
+from database.database import *
+from models.student import *
+from models.orders import *
 # from server.app import socket_manager as sm
 # import asyncio
 from binance import AsyncClient, BinanceSocketManager

@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
 
-from app.database.database import *
-from app.models.users import *
+from database.database import *
+from models.users import *
 
 router = APIRouter()
 
